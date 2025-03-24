@@ -13,7 +13,7 @@ func DBCreateDump(pairConfig config.PairConfig) (bool, error) {
 	backupFileName := getBackupFileName(pairConfig)
 
 	if err := os.Remove(backupFileName); err != nil && !os.IsNotExist(err) {
-		return false, fmt.Errorf("ошибка удаления старого дампа: %w", err)
+		return false, fmt.Errorf("ошибка удаления старого дампа: %v", err)
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
@@ -32,7 +32,7 @@ func DBCreateDump(pairConfig config.PairConfig) (bool, error) {
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return false, fmt.Errorf("ошибка создания дампа: %w\n%s", err, string(output))
+		return false, fmt.Errorf("ошибка создания дампа: %v\n%s", err, string(output))
 	}
 
 	return true, nil
@@ -57,7 +57,7 @@ func DBRestoreDump(pairConfig config.PairConfig) (bool, error) {
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return false, fmt.Errorf("ошибка разворачивания дампа: %w\n%s", err, string(output))
+		return false, fmt.Errorf("ошибка разворачивания дампа: %v\n%s", err, string(output))
 	}
 
 	return true, nil

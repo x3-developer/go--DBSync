@@ -37,6 +37,6 @@ func main() {
 
 	restoreDumpResult, restoreErr := dumper.DBRestoreDump(cfg.Pairs[index])
 	if restoreErr != nil || !restoreDumpResult {
-		log.Fatalf("неудалось развернуть дамп: %s", createErr)
+		log.Fatalf("не удалось развернуть дамп: %v", restoreErr)
 	}
 }

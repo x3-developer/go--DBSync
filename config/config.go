@@ -30,11 +30,11 @@ func LoadConfig() (Config, error) {
 
 	file, err := os.ReadFile(filename)
 	if err != nil {
-		return config, fmt.Errorf("ошибка чтения файла конфигурации: %w", err)
+		return config, fmt.Errorf("ошибка чтения файла конфигурации: %v", err)
 	}
 
 	if err := json.Unmarshal(file, &config); err != nil {
-		return config, fmt.Errorf("ошибка парсинга JSON: %w", err)
+		return config, fmt.Errorf("ошибка парсинга JSON: %v", err)
 	}
 
 	if len(config.Pairs) == 0 {
