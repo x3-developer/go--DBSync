@@ -1,0 +1,38 @@
+{
+  "pairs": [
+    {
+      "alias": "project1",
+      "source": {
+        "host": "host",
+        "port": "3306",
+        "username": "user",
+        "password": "password",
+        "dbname": "dbname"
+      },
+      "target": {
+        "host": "host",
+        "port": "3306",
+        "username": "user",
+        "password": "password",
+        "dbname": "dbname"
+      }
+    },
+    {
+      "alias": "project2",
+      "source": {
+        "host": "host",
+        "port": "3306",
+        "username": "user",
+        "password": "password",
+        "dbname": "dbname"
+      },
+      "target": {
+        "host": "host",
+        "port": "3306",
+        "username": "user",
+        "password": "password",
+        "dbname": "dbname"
+      }
+    }
+  ]
+}
